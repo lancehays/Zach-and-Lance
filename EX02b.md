@@ -1,7 +1,20 @@
 # **Normalization of Veterinary List**
 
-## Step 1
-The given list displays all 8 qualities of a relation, so we may proceed to subsequent steps.
+## Step 1: Identify All Candidate Keys of the Relation
+
+Candidate Keys are keys that can uniquely identify each row in a relation.
+
+• PetName
+
+• OwnerLastName, OwnerPhone
+
+• PetDOB
+
+• Date
+
+• PetID - Surrogate
+
+• Invoice# - Surrogate
 
 ## Step 2
 Candidate keys must be identified, and are as follows:
