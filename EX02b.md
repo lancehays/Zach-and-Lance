@@ -1,38 +1,27 @@
-# **Normalization of Veterinary List**
+# **Normalization of Veterinarian List**
 
-## Step 1: Identify All Candidate Keys of the Relation
-
-Candidate Keys are keys that can uniquely identify each row in a relation.
-
-• PetName
-
-• OwnerLastName, OwnerPhone
-
-• PetDOB
-
-• Date
-
-• PetID - Surrogate
-
-• Invoice# - Surrogate
+## Step 1
+The table upholds all 8 qualities of a relation, so we will continue to Step 2.
 
 ## Step 2
-Candidate keys must be identified, and are as follows:
+Candidate keys must be identified, which are keys that can be used to uniquely identify each row in a relation. The candidate keys are found below:
 
 • PetName
 
-• OwnerLastName, OwnerPhone
+• OwnerLastName 
+
+• OwnerPhone
 
 • PetDOB
 
 • Date
 
-• PetID - Surrogate
+• PetID - Surrogate Key
 
-• Invoice# - Surrogate
+• InvoiceNumber - Surrogate Key
 
 ## Step 3
-We can now determine all of the functional dependencies; these are the candidate keys that can describe all other column values. These functional dependencies (without the surrogate keys) are written accordingly:
+Now we must determine all of the functional dependencies; these are the candidate keys that can describe all other column values. These functional dependencies, excluding the surrogate keys, are found below:
 
 • PetName → (PetType, PetBreed, PetDOB, OwnerLastName, OwnerFirstName, OwnerPhone, OwnerEmail, Service, Charge)
 
@@ -41,11 +30,10 @@ We can now determine all of the functional dependencies; these are the candidate
 • Service → (PetName, PetType, PetBreed, PetDOB, OwnerLastName, OwnerFirstName, OwnerPhone, OwnerEmail, Service, Charge)
 
 ## Step 4
-We can see that some determinants are not candidate keys; Service and owners name by itself. This tells us that there are normalization issues with this list. We can either create a new list with the functional dependency being the relation between the distinct tables (i.e. foreign key) or create a new table with a surrogate key and a foreign key to relate the tables.
-We chose to do both. We created three themes out of the original list; Pet Info, Owner Info, and Invoices. We created 2 surrogate keys; PetID and Invoice#. These became the primary keys in Pet info (PetID) and Invoices (Invoice#) respectively. The notation for the 3 tables is written as follows with Surrogate keys bolded and foreign keys italicized with the primary keys listed first in the parentheses.
+We now see some determinants are not candidate keys; Service and OwnerLastName. This means the relation is not normalized as is. We have chosen to create a new table with a surrogate key and a foreign key to relate the tables, as well as connect a new relation to the original with a foreign key. We created three themes out of the original list; Pet Info, Owner Info, and Invoices. We created 2 surrogate keys; PetID and InvoiceNumber. These became the primary keys in Pet Info (PetID) and Invoices (InvoiceNumber) respectively. The notation for the 3 tables is found below with surrogate keys bolded and foreign keys italicized with the primary keys listed first in the parentheses.
 
-• Pet Info (**Pet ID**, *OwnerLastName*, PetBreed, PetType, PetName,PetDOB)
+• Pet Info (**PetID**, *OwnerLastName*, PetBreed, PetType, PetName,PetDOB)
 
-• Owner Info (*OwnerLastName*, Owner Phone, OwnersFirstName, OwnerEmail
+• Owner Info (*OwnerLastName*, Owner Phone, OwnersFirstName, OwnerEmail)
 
-• Invoices (**Invoice#**, PetID, Service, Date, charge, *OwnerLastName*)
+• Invoices (**InvoiceNumber**, PetID, Service, Date, charge, *OwnerLastName*)
