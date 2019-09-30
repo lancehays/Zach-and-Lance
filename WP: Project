@@ -1,8 +1,0 @@
-CREATE TABLE PROJECT (
-    ProjectID Int PRIMARY KEY,
-    ProjectName Char(50) NOT NULL,
-    Department Char(35) NOT NULL,
-    MaxHours Numeric(8,2) NOT NULL DEFAULT 100,
-    StartDate Date NULL,
-    EndDate Date NULL
-    );
