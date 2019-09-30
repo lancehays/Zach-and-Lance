@@ -1,0 +1,10 @@
+CREATE TABLE EMPLOYEE (
+    EmployeeNumber Int PRIMARY KEY,
+    FirstName Char(25) NOT NULL,
+    LastName Char(25) NOT NULL,
+    Department Char(35) NOT NULL DEFAULT 'Human Resources',
+    Position Char(35) NULL,
+    Supervisor Int NULL,
+    OfficePhone Char(12) NULL,
+    EmailAddress VarChar(100) NOT NULL UNIQUE
+    );
